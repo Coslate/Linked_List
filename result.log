@@ -1,0 +1,72 @@
+rm -rf ../exec_output/Linked_List_main.o
+rm -rf ../exec_output/Linked_List.o
+g++ -g -Wall -O3  -c Linked_List.cpp -I ./include -o ../exec_output/Linked_List.o
+/usr/local/bin/ctags -R ./*
+/usr/local/bin/ctags -a ./include/*
+g++ -g -Wall -O3  -I ./include ../exec_output/Linked_List.o Linked_List_main.cpp -o ../exec_output/Linked_List_main.o
+../exec_output/Linked_List_main.o
+[50 25 25 11 100 999 71]
+[0x94e0d0 0x94e090 0x94e050 0x94e030 0x94e010 0x94e070 0x94e0b0]
+first = 0x94e0d0
+last = 0x94e0b0
+size = 7
+-------Reverse-------
+[71 999 100 11 25 25 50]
+[0x94e0b0 0x94e070 0x94e010 0x94e030 0x94e050 0x94e090 0x94e0d0]
+first = 0x94e0b0
+last = 0x94e0d0
+size = 7
+-------Delete 25-------
+[71 999 100 11 50]
+[0x94e0b0 0x94e070 0x94e010 0x94e030 0x94e0d0]
+first = 0x94e0b0
+last = 0x94e0d0
+size = 5
+-------Delete 50-------
+[71 999 100 11]
+[0x94e0b0 0x94e070 0x94e010 0x94e030]
+first = 0x94e0b0
+last = 0x94e030
+size = 4
+-------Delete 999-------
+[71 100 11]
+[0x94e0b0 0x94e010 0x94e030]
+first = 0x94e0b0
+last = 0x94e030
+size = 3
+-------Delete 71-------
+[100 11]
+[0x94e010 0x94e030]
+first = 0x94e010
+last = 0x94e030
+size = 2
+-------Delete 100-------
+[11]
+[0x94e030]
+first = 0x94e030
+last = 0x94e030
+size = 1
+-------InsertArbitrary (0, 5555)-------
+[5555 11]
+[0x94e010 0x94e030]
+first = 0x94e010
+last = 0x94e030
+size = 2
+-------InsertArbitrary (1, 9487)-------
+[5555 9487 11]
+[0x94e010 0x94e0b0 0x94e030]
+first = 0x94e010
+last = 0x94e030
+size = 3
+-------Reverse-------
+[11 9487 5555]
+[0x94e030 0x94e0b0 0x94e010]
+first = 0x94e030
+last = 0x94e010
+size = 3
+-------CleanAll-------
+[]
+[]
+first = 0
+last = 0
+size = 0
