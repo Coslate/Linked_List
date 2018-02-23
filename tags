@@ -9,30 +9,44 @@ CFLAGS	./Makefile	/^CFLAGS = -g -Wall -O3 $/;"	m
 COMPILE_FLAGS	./Makefile	/^COMPILE_FLAGS = -c$/;"	m
 CTAGS_UTIL	./Makefile	/^CTAGS_UTIL = \/usr\/local\/bin\/$/;"	m
 CleanAll	./Linked_List.cpp	/^void LinkedList::CleanAll(){$/;"	f	class:LinkedList
+Delete	./Linked_List.cpp	/^void LinkedList::Delete(LinkedListNode* const deleted_node){$/;"	f	class:LinkedList
 Delete	./Linked_List.cpp	/^void LinkedList::Delete(const int value){$/;"	f	class:LinkedList
+GetAllData	./Linked_List.cpp	/^void LinkedList::GetAllData(int* const input_arr){$/;"	f	class:LinkedList
+GetData	./include/Linked_List.h	/^        inline int              GetData(){return data;};$/;"	f	class:LinkedListNode
+GetFristNode	./include/Linked_List.h	/^        inline LinkedListNode*  GetFristNode(){return first;};$/;"	f	class:LinkedList
+GetLastNode	./include/Linked_List.h	/^        inline LinkedListNode*  GetLastNode(){return last;};$/;"	f	class:LinkedList
+GetListSize	./include/Linked_List.h	/^        inline int              GetListSize(){return size_of_list;};$/;"	f	class:LinkedList
+GetName	./include/Linked_List.h	/^        inline std::string      GetName(){return name;};$/;"	f	class:LinkedListNode
+GetNext	./include/Linked_List.h	/^        inline LinkedListNode*  GetNext(){return next;};$/;"	f	class:LinkedListNode
 INCLUDE_FILES	./Makefile	/^INCLUDE_FILES = .\/include$/;"	m
 INCLUDE_FLAGS	./Makefile	/^INCLUDE_FLAGS = -I $(INCLUDE_FILES)$/;"	m
+InsertArbitrary	./Linked_List.cpp	/^void LinkedList::InsertArbitrary(const int loc, LinkedListNode* const inserted_node){\/\/count from 0$/;"	f	class:LinkedList
 InsertArbitrary	./Linked_List.cpp	/^void LinkedList::InsertArbitrary(const int loc, const int value){\/\/count from 0$/;"	f	class:LinkedList
+InsertFront	./Linked_List.cpp	/^void LinkedList::InsertFront(LinkedListNode* const inserted_node){$/;"	f	class:LinkedList
 InsertFront	./Linked_List.cpp	/^void LinkedList::InsertFront(const int value){$/;"	f	class:LinkedList
+InsertTail	./Linked_List.cpp	/^void LinkedList::InsertTail(LinkedListNode* const inserted_node){$/;"	f	class:LinkedList
 InsertTail	./Linked_List.cpp	/^void LinkedList::InsertTail(const int value){$/;"	f	class:LinkedList
 LinkedList	./include/Linked_List.h	/^        LinkedList() : first(NULL), last(NULL), size_of_list(0){};$/;"	f	class:LinkedList
 LinkedList	./include/Linked_List.h	/^class LinkedList{$/;"	c
-LinkedListNode	./include/Linked_List.h	/^        LinkedListNode() : data(0), next(NULL){};$/;"	f	class:LinkedListNode
-LinkedListNode	./include/Linked_List.h	/^        LinkedListNode(const int value) : data(value), next(NULL){};$/;"	f	class:LinkedListNode
+LinkedListNode	./include/Linked_List.h	/^        LinkedListNode() : data(0), name("NULL"), next(NULL){};$/;"	f	class:LinkedListNode
+LinkedListNode	./include/Linked_List.h	/^        LinkedListNode(const int value) : data(value), name("NULL"), next(NULL){};$/;"	f	class:LinkedListNode
+LinkedListNode	./include/Linked_List.h	/^        LinkedListNode(const int value, const std::string val_str) : data(value), name(val_str), next(NULL){};$/;"	f	class:LinkedListNode
 LinkedListNode	./include/Linked_List.h	/^class LinkedListNode{$/;"	c
 MAIN_OBJECT_EXEC	./Makefile	/^MAIN_OBJECT_EXEC = $(MAIN_OBJECT_NAME).o$/;"	m
 MAIN_OBJECT_EXEC_OUTPUT	./Makefile	/^MAIN_OBJECT_EXEC_OUTPUT = ..\/exec_output\/$/;"	m
 MAIN_OBJECT_NAME	./Makefile	/^MAIN_OBJECT_NAME = Linked_List_main$/;"	m
 MAIN_OBJECT_SOURCE	./Makefile	/^MAIN_OBJECT_SOURCE = $(MAIN_OBJECT_NAME).cpp$/;"	m
 PrintList	./Linked_List.cpp	/^void LinkedList::PrintList(const bool debug_addr){$/;"	f	class:LinkedList
-ReturnAllData	./Linked_List.cpp	/^void LinkedList::ReturnAllData(int* const input_arr){$/;"	f	class:LinkedList
-ReturnListSize	./Linked_List.cpp	/^int LinkedList::ReturnListSize(){$/;"	f	class:LinkedList
 Reverse	./Linked_List.cpp	/^void LinkedList::Reverse(){$/;"	f	class:LinkedList
+SetData	./include/Linked_List.h	/^        inline void             SetData(const int val){data = val;};$/;"	f	class:LinkedListNode
+SetName	./include/Linked_List.h	/^        inline void             SetName(const std::string val){name = val;};$/;"	f	class:LinkedListNode
+SetNext	./include/Linked_List.h	/^        inline void             SetNext(LinkedListNode* const val){next = val;};$/;"	f	class:LinkedListNode
 _LINKED_LIST_H_	./include/Linked_List.h	2;"	d
 data	./include/Linked_List.h	/^        int data;$/;"	m	class:LinkedListNode
 first	./include/Linked_List.h	/^        LinkedListNode* first;$/;"	m	class:LinkedList
 last	./include/Linked_List.h	/^        LinkedListNode* last;$/;"	m	class:LinkedList
 main	./Linked_List_main.cpp	/^int main(){$/;"	f
+name	./include/Linked_List.h	/^        std::string name;$/;"	m	class:LinkedListNode
 next	./include/Linked_List.h	/^        LinkedListNode* next;$/;"	m	class:LinkedListNode
 size_of_list	./include/Linked_List.h	/^        int size_of_list;$/;"	m	class:LinkedList
 ~LinkedList	./Linked_List.cpp	/^LinkedList::~LinkedList(){$/;"	f	class:LinkedList

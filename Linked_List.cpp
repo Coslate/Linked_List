@@ -5,7 +5,6 @@
 LinkedList::~LinkedList(){
     CleanAll();
 }
-
 void LinkedList::InsertFront(const int value){
     LinkedListNode* current = new LinkedListNode(value); // in heap
     current->next = first;
@@ -16,7 +15,16 @@ void LinkedList::InsertFront(const int value){
         last = first;
     }
 }
+void LinkedList::InsertFront(LinkedListNode* const inserted_node){
+    LinkedListNode* current = inserted_node; // in heap
+    current->next = first;
+    first = current;
+    ++size_of_list;
 
+    if(size_of_list == 1){
+        last = first;
+    }
+}
 void LinkedList::InsertTail(const int value){
     LinkedListNode* current = new LinkedListNode(value); //in heap
 
@@ -30,7 +38,19 @@ void LinkedList::InsertTail(const int value){
         ++size_of_list;
     }
 }
+void LinkedList::InsertTail(LinkedListNode* const inserted_node){
+    LinkedListNode* current = inserted_node; //in heap
 
+    if(size_of_list == 0){
+        last = current;
+        first = last;
+        ++size_of_list;
+    }else{
+        last->next = current;
+        last = current;
+        ++size_of_list;
+    }
+}
 void LinkedList::InsertArbitrary(const int loc, const int value){//count from 0
     if(size_of_list < loc){
         std::cout<<"Error : size of the list is not enough, size = "<<size_of_list<<std::endl;
@@ -65,7 +85,40 @@ void LinkedList::InsertArbitrary(const int loc, const int value){//count from 0
         }
     }
 }
-
+void LinkedList::InsertArbitrary(const int loc, LinkedListNode* const inserted_node){//count from 0
+    if(size_of_list < loc){
+        std::cout<<"Error : size of the list is not enough, size = "<<size_of_list<<std::endl;
+        return;
+    }else if(loc < 0){
+        std::cout<<"Error : insert location cannot be < 0"<<std::endl;
+        return;
+    }else{
+        int count_num = 0;
+        LinkedListNode* current_node = first;
+        LinkedListNode* previous_node = first;
+        while(current_node != NULL){
+            if(loc == size_of_list){
+                InsertTail(inserted_node);
+                break;
+            }else if(count_num < loc){
+                previous_node = current_node;
+                current_node = current_node->next;
+                ++count_num;
+                continue;
+            }else{
+                if(loc == 0){
+                    InsertFront(inserted_node);
+                }else{
+                    LinkedListNode* insertion_node = inserted_node;
+                    previous_node->next = insertion_node;
+                    insertion_node->next = current_node;
+                    ++size_of_list;
+                }
+                break;
+            }
+        }
+    }
+}
 void LinkedList::Reverse(){
     if(size_of_list > 0){
         LinkedList* tmp = new LinkedList;
@@ -87,7 +140,6 @@ void LinkedList::Reverse(){
         delete tmp;
     }
 }
-
 void LinkedList::Delete(const int value){
     if(size_of_list > 0){
         LinkedListNode* previous_node = first;
@@ -117,7 +169,35 @@ void LinkedList::Delete(const int value){
         }
     }
 }
-
+void LinkedList::Delete(LinkedListNode* const deleted_node){
+    if(size_of_list > 0){
+        LinkedListNode* previous_node = first;
+        LinkedListNode* current_node = first;
+        while(current_node != NULL){
+            if(current_node == deleted_node){
+                if(current_node == first){
+                    previous_node = current_node->next;
+                    delete current_node;
+                    current_node = previous_node;
+                    first = current_node;
+                }else if(current_node == last){
+                    delete current_node;
+                    last = previous_node;
+                    current_node = NULL;
+                    previous_node->next = NULL;
+                }else{
+                    previous_node->next = current_node->next;
+                    delete current_node;
+                    current_node = previous_node->next;
+                }
+                --size_of_list;
+            }else{
+                previous_node = current_node;
+                current_node = current_node->next;
+            }
+        }
+    }
+}
 void LinkedList::CleanAll(){
     while(first != NULL){
         LinkedListNode* first_next_tmp = first->next;
@@ -127,7 +207,6 @@ void LinkedList::CleanAll(){
     }
     last = NULL;
 }
-
 void LinkedList::PrintList(const bool debug_addr){
     LinkedListNode* first_tmp = first;
     std::cout<<"[";
@@ -156,12 +235,7 @@ void LinkedList::PrintList(const bool debug_addr){
         std::cout<<"last = "<<last<<std::endl;
     }
 }
-
-int LinkedList::ReturnListSize(){
-    return size_of_list;
-}
-
-void LinkedList::ReturnAllData(int* const input_arr){
+void LinkedList::GetAllData(int* const input_arr){
     LinkedListNode* current_node = first;
     int count_data = 0;
 
