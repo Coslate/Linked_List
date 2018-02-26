@@ -121,23 +121,24 @@ void LinkedList::InsertArbitrary(const int loc, LinkedListNode* const inserted_n
 }
 void LinkedList::Reverse(){
     if(size_of_list > 0){
-        LinkedList* tmp = new LinkedList;
-        tmp->InsertFront(first->data);
-
+        LinkedListNode** tmp_storage_node = new LinkedListNode* [size_of_list];
         LinkedListNode* current_node = first;
-        while(current_node->next != NULL){
-            tmp->InsertFront(current_node->next->data);
+        int count = 0;
+        
+        while(current_node != NULL){
+            tmp_storage_node[count] = current_node;
+            ++count;
             current_node = current_node->next;
         }
-        CleanAll();
-
-        LinkedListNode* tmp_current_node = tmp->first;
-        while(tmp_current_node != NULL){
-            InsertTail(tmp_current_node->data);
-            tmp_current_node = tmp_current_node->next;
+        
+        LinkedListNode* v0 = tmp_storage_node[count-1];
+        for(int i=count-2;i>=0;--i){
+            v0->next = tmp_storage_node[i];
+            v0 = v0->next;
         }
-
-        delete tmp;
+        v0->next = NULL;
+        first = tmp_storage_node[count-1];
+        last = v0;
     }
 }
 void LinkedList::Delete(const int value){
@@ -207,17 +208,32 @@ void LinkedList::CleanAll(){
     }
     last = NULL;
 }
-void LinkedList::PrintList(const bool debug_addr){
+void LinkedList::PrintList(const bool debug_addr, const bool debug_name, const bool debug_key){
     LinkedListNode* first_tmp = first;
-    std::cout<<"[";
-    while(first != NULL){
-        std::cout<<first->data;
-        if(first->next != NULL){
-            std::cout<<" ";
+    if(debug_key){
+        std::cout<<"[";
+        while(first != NULL){
+            std::cout<<first->data;
+            if(first->next != NULL){
+                std::cout<<" ";
+            }
+            first = first->next;
         }
-        first = first->next;
+        std::cout<<"]"<<std::endl;
     }
-    std::cout<<"]"<<std::endl;
+    first = first_tmp;
+
+    if(debug_name){
+        std::cout<<"[";
+        while(first != NULL){
+            std::cout<<first->name;
+            if(first->next != NULL){
+                std::cout<<" ";
+            }
+            first = first->next;
+        }
+        std::cout<<"]"<<std::endl;
+    }
     first = first_tmp;
 
     if(debug_addr){

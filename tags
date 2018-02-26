@@ -36,7 +36,7 @@ MAIN_OBJECT_EXEC	./Makefile	/^MAIN_OBJECT_EXEC = $(MAIN_OBJECT_NAME).o$/;"	m
 MAIN_OBJECT_EXEC_OUTPUT	./Makefile	/^MAIN_OBJECT_EXEC_OUTPUT = ..\/exec_output\/$/;"	m
 MAIN_OBJECT_NAME	./Makefile	/^MAIN_OBJECT_NAME = Linked_List_main$/;"	m
 MAIN_OBJECT_SOURCE	./Makefile	/^MAIN_OBJECT_SOURCE = $(MAIN_OBJECT_NAME).cpp$/;"	m
-PrintList	./Linked_List.cpp	/^void LinkedList::PrintList(const bool debug_addr){$/;"	f	class:LinkedList
+PrintList	./Linked_List.cpp	/^void LinkedList::PrintList(const bool debug_addr, const bool debug_name, const bool debug_key){$/;"	f	class:LinkedList
 Reverse	./Linked_List.cpp	/^void LinkedList::Reverse(){$/;"	f	class:LinkedList
 SetData	./include/Linked_List.h	/^        inline void             SetData(const int val){data = val;};$/;"	f	class:LinkedListNode
 SetName	./include/Linked_List.h	/^        inline void             SetName(const std::string val){name = val;};$/;"	f	class:LinkedListNode

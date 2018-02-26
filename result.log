@@ -6,65 +6,76 @@ g++ -g -Wall -O3  -c Linked_List.cpp -I ./include -o ../exec_output/Linked_List.
 g++ -g -Wall -O3  -I ./include ../exec_output/Linked_List.o Linked_List_main.cpp -o ../exec_output/Linked_List_main.o
 ../exec_output/Linked_List_main.o
 [50 25 25 11 100 999 71]
-[0x630220 0x630180 0x6300e0 0x630090 0x630040 0x630130 0x6301d0]
-first = 0x630220
-last = 0x6301d0
+[new_50_node new_25_node2 new_25_node new_11_node new_100_node new_999_node new_71_node]
+[0x1c4c220 0x1c4c180 0x1c4c0e0 0x1c4c090 0x1c4c040 0x1c4c130 0x1c4c1d0]
+first = 0x1c4c220
+last = 0x1c4c1d0
 size = 7
 -------Reverse-------
 [71 999 100 11 25 25 50]
-[0x6301d0 0x630130 0x630040 0x630090 0x6300e0 0x630180 0x630220]
-first = 0x6301d0
-last = 0x630220
+[new_71_node new_999_node new_100_node new_11_node new_25_node new_25_node2 new_50_node]
+[0x1c4c1d0 0x1c4c130 0x1c4c040 0x1c4c090 0x1c4c0e0 0x1c4c180 0x1c4c220]
+first = 0x1c4c1d0
+last = 0x1c4c220
 size = 7
 -------Delete 25-------
 [71 999 100 11 50]
-[0x6301d0 0x630130 0x630040 0x630090 0x630220]
-first = 0x6301d0
-last = 0x630220
+[new_71_node new_999_node new_100_node new_11_node new_50_node]
+[0x1c4c1d0 0x1c4c130 0x1c4c040 0x1c4c090 0x1c4c220]
+first = 0x1c4c1d0
+last = 0x1c4c220
 size = 5
 -------Delete 50-------
 [71 999 100 11]
-[0x6301d0 0x630130 0x630040 0x630090]
-first = 0x6301d0
-last = 0x630090
+[new_71_node new_999_node new_100_node new_11_node]
+[0x1c4c1d0 0x1c4c130 0x1c4c040 0x1c4c090]
+first = 0x1c4c1d0
+last = 0x1c4c090
 size = 4
 -------Delete 999-------
 [71 100 11]
-[0x6301d0 0x630040 0x630090]
-first = 0x6301d0
-last = 0x630090
+[new_71_node new_100_node new_11_node]
+[0x1c4c1d0 0x1c4c040 0x1c4c090]
+first = 0x1c4c1d0
+last = 0x1c4c090
 size = 3
 -------Delete 71-------
 [100 11]
-[0x630040 0x630090]
-first = 0x630040
-last = 0x630090
+[new_100_node new_11_node]
+[0x1c4c040 0x1c4c090]
+first = 0x1c4c040
+last = 0x1c4c090
 size = 2
 -------Delete 100-------
 [11]
-[0x630090]
-first = 0x630090
-last = 0x630090
+[new_11_node]
+[0x1c4c090]
+first = 0x1c4c090
+last = 0x1c4c090
 size = 1
 -------InsertArbitrary (0, 5555)-------
 [5555 11]
-[0x630040 0x630090]
-first = 0x630040
-last = 0x630090
+[new_5555_node new_11_node]
+[0x1c4c040 0x1c4c090]
+first = 0x1c4c040
+last = 0x1c4c090
 size = 2
 -------InsertArbitrary (1, 9487)-------
 [5555 9487 11]
-[0x630040 0x6301d0 0x630090]
-first = 0x630040
-last = 0x630090
+[new_5555_node new_9487_node new_11_node]
+[0x1c4c040 0x1c4c1d0 0x1c4c090]
+first = 0x1c4c040
+last = 0x1c4c090
 size = 3
 -------Reverse-------
 [11 9487 5555]
-[0x630090 0x6301d0 0x630040]
-first = 0x630090
-last = 0x630040
+[new_11_node new_9487_node new_5555_node]
+[0x1c4c090 0x1c4c1d0 0x1c4c040]
+first = 0x1c4c090
+last = 0x1c4c040
 size = 3
 -------CleanAll-------
+[]
 []
 []
 first = 0

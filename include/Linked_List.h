@@ -42,7 +42,7 @@ class LinkedList{
         void Delete(const int value);
         void Delete(LinkedListNode* const deleted_node);
         void CleanAll();
-        void PrintList(const bool debug_addr = false);
+        void PrintList(const bool debug_addr = false, const bool debug_name = false, const bool debug_key = true);
         void GetAllData(int* const input_arr);
 
         inline int              GetListSize(){return size_of_list;};
