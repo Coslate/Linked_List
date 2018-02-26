@@ -139,6 +139,8 @@ void LinkedList::Reverse(){
         v0->next = NULL;
         first = tmp_storage_node[count-1];
         last = v0;
+
+        delete [] tmp_storage_node;
     }
 }
 void LinkedList::Delete(const int value){
