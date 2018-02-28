@@ -33,10 +33,13 @@ class LinkedList{
         ~LinkedList();
 
         void InsertFront(const int value);
+        void InsertFront(const int value, const std::string val_str);
         void InsertFront(LinkedListNode* const inserted_node);
         void InsertTail(const int value);
+        void InsertTail(const int value, const std::string val_str);
         void InsertTail(LinkedListNode* const inserted_node);
         void InsertArbitrary(const int loc, const int value);//count from 0
+        void InsertArbitrary(const int loc, const int value, const std::string val_str);//count from 0
         void InsertArbitrary(const int loc, LinkedListNode* const inserted_node);//count from 0
         void Reverse();
         void Delete(const int value);

@@ -22,10 +22,13 @@ INCLUDE_FILES	./Makefile	/^INCLUDE_FILES = .\/include$/;"	m
 INCLUDE_FLAGS	./Makefile	/^INCLUDE_FLAGS = -I $(INCLUDE_FILES)$/;"	m
 InsertArbitrary	./Linked_List.cpp	/^void LinkedList::InsertArbitrary(const int loc, LinkedListNode* const inserted_node){\/\/count from 0$/;"	f	class:LinkedList
 InsertArbitrary	./Linked_List.cpp	/^void LinkedList::InsertArbitrary(const int loc, const int value){\/\/count from 0$/;"	f	class:LinkedList
+InsertArbitrary	./Linked_List.cpp	/^void LinkedList::InsertArbitrary(const int loc, const int value, const std::string val_str){\/\/count from 0$/;"	f	class:LinkedList
 InsertFront	./Linked_List.cpp	/^void LinkedList::InsertFront(LinkedListNode* const inserted_node){$/;"	f	class:LinkedList
 InsertFront	./Linked_List.cpp	/^void LinkedList::InsertFront(const int value){$/;"	f	class:LinkedList
+InsertFront	./Linked_List.cpp	/^void LinkedList::InsertFront(const int value, const std::string val_str){$/;"	f	class:LinkedList
 InsertTail	./Linked_List.cpp	/^void LinkedList::InsertTail(LinkedListNode* const inserted_node){$/;"	f	class:LinkedList
 InsertTail	./Linked_List.cpp	/^void LinkedList::InsertTail(const int value){$/;"	f	class:LinkedList
+InsertTail	./Linked_List.cpp	/^void LinkedList::InsertTail(const int value, const std::string val_str){$/;"	f	class:LinkedList
 LinkedList	./include/Linked_List.h	/^        LinkedList() : first(NULL), last(NULL), size_of_list(0){};$/;"	f	class:LinkedList
 LinkedList	./include/Linked_List.h	/^class LinkedList{$/;"	c
 LinkedListNode	./include/Linked_List.h	/^        LinkedListNode() : data(0), name("NULL"), next(NULL){};$/;"	f	class:LinkedListNode

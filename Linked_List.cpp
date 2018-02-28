@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 #include <cstdio>
 #include <Linked_List.h>
 
@@ -7,6 +8,16 @@ LinkedList::~LinkedList(){
 }
 void LinkedList::InsertFront(const int value){
     LinkedListNode* current = new LinkedListNode(value); // in heap
+    current->next = first;
+    first = current;
+    ++size_of_list;
+
+    if(size_of_list == 1){
+        last = first;
+    }
+}
+void LinkedList::InsertFront(const int value, const std::string val_str){
+    LinkedListNode* current = new LinkedListNode(value, val_str); // in heap
     current->next = first;
     first = current;
     ++size_of_list;
@@ -27,6 +38,19 @@ void LinkedList::InsertFront(LinkedListNode* const inserted_node){
 }
 void LinkedList::InsertTail(const int value){
     LinkedListNode* current = new LinkedListNode(value); //in heap
+
+    if(size_of_list == 0){
+        last = current;
+        first = last;
+        ++size_of_list;
+    }else{
+        last->next = current;
+        last = current;
+        ++size_of_list;
+    }
+}
+void LinkedList::InsertTail(const int value, const std::string val_str){
+    LinkedListNode* current = new LinkedListNode(value, val_str); //in heap
 
     if(size_of_list == 0){
         last = current;
@@ -76,6 +100,40 @@ void LinkedList::InsertArbitrary(const int loc, const int value){//count from 0
                     InsertFront(value);
                 }else{
                     LinkedListNode* insertion_node = new LinkedListNode(value);
+                    previous_node->next = insertion_node;
+                    insertion_node->next = current_node;
+                    ++size_of_list;
+                }
+                break;
+            }
+        }
+    }
+}
+void LinkedList::InsertArbitrary(const int loc, const int value, const std::string val_str){//count from 0
+    if(size_of_list < loc){
+        std::cout<<"Error : size of the list is not enough, size = "<<size_of_list<<std::endl;
+        return;
+    }else if(loc < 0){
+        std::cout<<"Error : insert location cannot be < 0"<<std::endl;
+        return;
+    }else{
+        int count_num = 0;
+        LinkedListNode* current_node = first;
+        LinkedListNode* previous_node = first;
+        while(current_node != NULL){
+            if(loc == size_of_list){
+                InsertTail(value, val_str);
+                break;
+            }else if(count_num < loc){
+                previous_node = current_node;
+                current_node = current_node->next;
+                ++count_num;
+                continue;
+            }else{
+                if(loc == 0){
+                    InsertFront(value, val_str);
+                }else{
+                    LinkedListNode* insertion_node = new LinkedListNode(value, val_str);
                     previous_node->next = insertion_node;
                     insertion_node->next = current_node;
                     ++size_of_list;
@@ -211,6 +269,10 @@ void LinkedList::CleanAll(){
     last = NULL;
 }
 void LinkedList::PrintList(const bool debug_addr, const bool debug_name, const bool debug_key){
+    if(size_of_list == 0){
+        std::cout<<"Warning : The List is empty."<<std::endl;
+        return;
+    }
     LinkedListNode* first_tmp = first;
     if(debug_key){
         std::cout<<"[";
