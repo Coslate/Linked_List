@@ -4,6 +4,7 @@
 #include <Linked_List.h>
 
 LinkedList::~LinkedList(){
+    std::cout<<"It is LinkedList destructor."<<std::endl;
     CleanAll();
 }
 void LinkedList::InsertFront(const int value){

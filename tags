@@ -3,7 +3,7 @@
 !_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
-!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+!_TAG_PROGRAM_VERSION	5.8	//
 CC	./Makefile	/^CC = g++$/;"	m
 CFLAGS	./Makefile	/^CFLAGS = -g -Wall -O3 $/;"	m
 COMPILE_FLAGS	./Makefile	/^COMPILE_FLAGS = -c$/;"	m
@@ -44,7 +44,7 @@ Reverse	./Linked_List.cpp	/^void LinkedList::Reverse(){$/;"	f	class:LinkedList
 SetData	./include/Linked_List.h	/^        inline void             SetData(const int val){data = val;};$/;"	f	class:LinkedListNode
 SetName	./include/Linked_List.h	/^        inline void             SetName(const std::string val){name = val;};$/;"	f	class:LinkedListNode
 SetNext	./include/Linked_List.h	/^        inline void             SetNext(LinkedListNode* const val){next = val;};$/;"	f	class:LinkedListNode
-_LINKED_LIST_H_	./include/Linked_List.h	2;"	d
+_LINKED_LIST_H_	./include/Linked_List.h	/^#define _LINKED_LIST_H_$/;"	d
 data	./include/Linked_List.h	/^        int data;$/;"	m	class:LinkedListNode
 first	./include/Linked_List.h	/^        LinkedListNode* first;$/;"	m	class:LinkedList
 last	./include/Linked_List.h	/^        LinkedListNode* last;$/;"	m	class:LinkedList

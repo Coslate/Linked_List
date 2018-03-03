@@ -7,77 +7,74 @@ g++ -g -Wall -O3  -I ./include ../exec_output/Linked_List.o Linked_List_main.cpp
 ../exec_output/Linked_List_main.o
 [50 25 25 11 100 999 71]
 [new_50_node new_25_node2 new_25_node new_11_node new_100_node new_999_node new_71_node]
-[0x8f8220 0x8f8180 0x8f80e0 0x8f8090 0x8f8040 0x8f8130 0x8f81d0]
-first = 0x8f8220
-last = 0x8f81d0
+[0x7fb440c033a0 0x7fb440c03330 0x7fb440c032d0 0x7fb440c032a0 0x7fb440c03270 0x7fb440c03300 0x7fb440c03370]
+first = 0x7fb440c033a0
+last = 0x7fb440c03370
 size = 7
 -------Reverse-------
 [71 999 100 11 25 25 50]
 [new_71_node new_999_node new_100_node new_11_node new_25_node new_25_node2 new_50_node]
-[0x8f81d0 0x8f8130 0x8f8040 0x8f8090 0x8f80e0 0x8f8180 0x8f8220]
-first = 0x8f81d0
-last = 0x8f8220
+[0x7fb440c03370 0x7fb440c03300 0x7fb440c03270 0x7fb440c032a0 0x7fb440c032d0 0x7fb440c03330 0x7fb440c033a0]
+first = 0x7fb440c03370
+last = 0x7fb440c033a0
 size = 7
 -------Delete 25-------
 [71 999 100 11 50]
 [new_71_node new_999_node new_100_node new_11_node new_50_node]
-[0x8f81d0 0x8f8130 0x8f8040 0x8f8090 0x8f8220]
-first = 0x8f81d0
-last = 0x8f8220
+[0x7fb440c03370 0x7fb440c03300 0x7fb440c03270 0x7fb440c032a0 0x7fb440c033a0]
+first = 0x7fb440c03370
+last = 0x7fb440c033a0
 size = 5
 -------Delete 50-------
 [71 999 100 11]
 [new_71_node new_999_node new_100_node new_11_node]
-[0x8f81d0 0x8f8130 0x8f8040 0x8f8090]
-first = 0x8f81d0
-last = 0x8f8090
+[0x7fb440c03370 0x7fb440c03300 0x7fb440c03270 0x7fb440c032a0]
+first = 0x7fb440c03370
+last = 0x7fb440c032a0
 size = 4
 -------Delete 999-------
 [71 100 11]
 [new_71_node new_100_node new_11_node]
-[0x8f81d0 0x8f8040 0x8f8090]
-first = 0x8f81d0
-last = 0x8f8090
+[0x7fb440c03370 0x7fb440c03270 0x7fb440c032a0]
+first = 0x7fb440c03370
+last = 0x7fb440c032a0
 size = 3
 -------Delete 71-------
 [100 11]
 [new_100_node new_11_node]
-[0x8f8040 0x8f8090]
-first = 0x8f8040
-last = 0x8f8090
+[0x7fb440c03270 0x7fb440c032a0]
+first = 0x7fb440c03270
+last = 0x7fb440c032a0
 size = 2
 -------Delete 100-------
 [11]
 [new_11_node]
-[0x8f8090]
-first = 0x8f8090
-last = 0x8f8090
+[0x7fb440c032a0]
+first = 0x7fb440c032a0
+last = 0x7fb440c032a0
 size = 1
 -------InsertArbitrary (0, 5555)-------
 [5555 11]
 [new_5555_node new_11_node]
-[0x8f8040 0x8f8090]
-first = 0x8f8040
-last = 0x8f8090
+[0x7fb440c03270 0x7fb440c032a0]
+first = 0x7fb440c03270
+last = 0x7fb440c032a0
 size = 2
 -------InsertArbitrary (1, 9487)-------
 [5555 9487 11]
 [new_5555_node new_9487_node new_11_node]
-[0x8f8040 0x8f81d0 0x8f8090]
-first = 0x8f8040
-last = 0x8f8090
+[0x7fb440c03270 0x7fb440c032d0 0x7fb440c032a0]
+first = 0x7fb440c03270
+last = 0x7fb440c032a0
 size = 3
 -------Reverse-------
 [11 9487 5555]
 [new_11_node new_9487_node new_5555_node]
-[0x8f8090 0x8f81d0 0x8f8040]
-first = 0x8f8090
-last = 0x8f8040
+[0x7fb440c032a0 0x7fb440c032d0 0x7fb440c03270]
+first = 0x7fb440c032a0
+last = 0x7fb440c03270
 size = 3
 -------CleanAll-------
-[]
-[]
-[]
-first = 0
-last = 0
+Warning : The List is empty.
 size = 0
+It is LinkedList destructor.
