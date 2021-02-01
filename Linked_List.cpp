@@ -4,7 +4,9 @@
 #include <Linked_List.h>
 
 LinkedList::~LinkedList(){
-    std::cout<<"It is LinkedList destructor."<<std::endl;
+    if(show_debug_msg){
+        std::cout<<"It is LinkedList destructor."<<std::endl;
+    }
     CleanAll();
 }
 void LinkedList::InsertFront(const int value){
@@ -269,7 +271,7 @@ void LinkedList::CleanAll(){
     }
     last = NULL;
 }
-void LinkedList::PrintList(const bool debug_addr, const bool debug_name, const bool debug_key){
+void LinkedList::PrintList(const bool debug_addr, const bool debug_name, const bool debug_key, const bool debug_explored){
     if(size_of_list == 0){
         std::cout<<"Warning : The List is empty."<<std::endl;
         return;
@@ -292,6 +294,19 @@ void LinkedList::PrintList(const bool debug_addr, const bool debug_name, const b
         std::cout<<"[";
         while(first != NULL){
             std::cout<<first->name;
+            if(first->next != NULL){
+                std::cout<<" ";
+            }
+            first = first->next;
+        }
+        std::cout<<"]"<<std::endl;
+    }
+    first = first_tmp;
+
+    if(debug_explored){
+        std::cout<<"[";
+        while(first != NULL){
+            std::cout<<first->explored;
             if(first->next != NULL){
                 std::cout<<" ";
             }
