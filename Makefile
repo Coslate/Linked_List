@@ -15,12 +15,15 @@ all : clean Linked_List all_file_tags
 	$(CC) $(CFLAGS) $(INCLUDE_FLAGS) $(MAIN_OBJECT_EXEC_OUTPUT)Linked_List.o $(MAIN_OBJECT_SOURCE) -o $(MAIN_OBJECT_EXEC_OUTPUT)$(MAIN_OBJECT_EXEC)
 	${MAIN_OBJECT_EXEC_OUTPUT}$(MAIN_OBJECT_EXEC)
 
-Linked_List : Linked_List.cpp 
+Linked_List : Linked_List.cpp | $(MAIN_OBJECT_EXEC_OUTPUT) 
 	$(CC) $(CFLAGS) $(COMPILE_FLAGS) Linked_List.cpp $(INCLUDE_FLAGS) -o $(MAIN_OBJECT_EXEC_OUTPUT)Linked_List.o
 
 all_file_tags : 
 	$(CTAGS_UTIL)ctags -R ./*
 	$(CTAGS_UTIL)ctags -a $(INCLUDE_FILES)/*
+
+$(MAIN_OBJECT_EXEC_OUTPUT): 
+	@mkdir $(MAIN_OBJECT_EXEC_OUTPUT)
 
 clean :
 	rm -rf $(MAIN_OBJECT_EXEC_OUTPUT)$(MAIN_OBJECT_EXEC)
