@@ -2,6 +2,7 @@
 #define _LINKED_LIST_H_
 #include <cstdlib>
 #include <string>
+#include <iostream>
 class LinkedList;
 
 class LinkedListNode{
@@ -17,17 +18,18 @@ class LinkedListNode{
         LinkedListNode(const int value, const std::string val_str, const bool explored) : data(value), name(val_str), next(NULL), explored(explored), color(0){};
         LinkedListNode(const int value, const std::string val_str, const bool explored, const int color) : data(value), name(val_str), next(NULL), explored(explored), color(color){};
 
-        inline int              GetData(){return data;};
-        inline std::string      GetName(){return name;};
-        inline LinkedListNode*  GetNext(){return next;};
-        inline bool             GetExplored(){return explored;};
-        inline int              GetColor(){return color;};
+        inline int              GetData() const {return data;};
+        inline std::string      GetName() const {return name;};
+        inline LinkedListNode*  GetNext() const {return next;};
+        inline bool             GetExplored() const {return explored;};
+        inline int              GetColor() const {return color;};
 
         inline void             SetData(const int val){data = val;};
         inline void             SetName(const std::string val){name = val;};
         inline void             SetNext(LinkedListNode* const val){next = val;};
         inline void             SetExplored(const bool explored_val){explored = explored_val;};
         inline void             SetColor(const int color_val){color = color_val;};
+        inline void             operator=(const int& other2) { data = other2;};
 
         friend class LinkedList;
 };
@@ -62,5 +64,51 @@ class LinkedList{
         inline LinkedListNode*  GetFristNode(){return first;};
         inline LinkedListNode*  GetLastNode(){return last;};
 };
+
+static inline std::ostream & operator<<(std::ostream &output, const LinkedListNode &node){ 
+    output<<"("<<node.GetName()<<", "<<node.GetData()<<")";
+    return output; 
+}
+
+/*
+static inline void operator=(LinkedListNode& other1, const int& other2) {
+    other1.SetData(other2);
+}*/
+
+static inline bool operator==(const LinkedListNode& other1, const LinkedListNode& other2) {
+    return (other1.GetData() == other2.GetData());
+}
+
+static inline bool operator==(const LinkedListNode& other1, const int& other2) {
+    return (other1.GetData() == other2);
+}
+
+static inline bool operator!=(const LinkedListNode& other1, const LinkedListNode& other2) {
+    return (other1.GetData() != other2.GetData());
+}
+
+static inline bool operator>(const LinkedListNode& other1, const LinkedListNode& other2) {
+    return (other1.GetData() > other2.GetData());
+}
+
+static inline bool operator>(const LinkedListNode& other1, const int &other2) {
+    return (other1.GetData() > other2);
+}
+
+static inline bool operator<(const LinkedListNode& other1, const int &other2) {
+    return (other1.GetData() < other2);
+}
+
+
+
+static inline void CustSwap(LinkedListNode &data1, LinkedListNode &data2){
+    std::string tmp_str  = data1.GetName();
+    int tmp_data         = data1.GetData();
+
+    data1.SetName(data2.GetName());
+    data1.SetData(data2.GetData());
+    data2.SetName(tmp_str);
+    data2.SetData(tmp_data);
+}
 
 #endif
