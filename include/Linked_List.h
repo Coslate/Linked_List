@@ -8,27 +8,36 @@ class LinkedList;
 class LinkedListNode{
         int data;
         std::string name;
+        std::string huffman_code;
         LinkedListNode* next;
+        LinkedListNode* left;  // left child
+        LinkedListNode* right; // right child
         bool explored;
         int  color;
     public : 
-        LinkedListNode() : data(0), name("NULL"), next(NULL), explored(false), color(0){};
-        LinkedListNode(const int value) : data(value), name("NULL"), next(NULL), explored(false), color(0){};
-        LinkedListNode(const int value, const std::string val_str) : data(value), name(val_str), next(NULL), explored(false), color(0){};
-        LinkedListNode(const int value, const std::string val_str, const bool explored) : data(value), name(val_str), next(NULL), explored(explored), color(0){};
-        LinkedListNode(const int value, const std::string val_str, const bool explored, const int color) : data(value), name(val_str), next(NULL), explored(explored), color(color){};
+        LinkedListNode() : data(0), name("NULL"), huffman_code(""), next(NULL), left(NULL), right(NULL), explored(false), color(0){};
+        LinkedListNode(const int value) : data(value), name("NULL"), huffman_code(""), next(NULL), left(NULL), right(NULL), explored(false), color(0){};
+        LinkedListNode(const int value, const std::string val_str) : data(value), name(val_str), huffman_code(""), next(NULL), left(NULL), right(NULL), explored(false), color(0){};
+        LinkedListNode(const int value, const std::string val_str, const bool explored) : data(value), name(val_str), huffman_code(""), next(NULL), left(NULL), right(NULL), explored(explored), color(0){};
+        LinkedListNode(const int value, const std::string val_str, const bool explored, const int color) : data(value), name(val_str), huffman_code(""), next(NULL), left(NULL), right(NULL), explored(explored), color(color){};
 
         inline int              GetData() const {return data;};
         inline std::string      GetName() const {return name;};
         inline LinkedListNode*  GetNext() const {return next;};
-        inline bool             GetExplored() const {return explored;};
-        inline int              GetColor() const {return color;};
+        inline LinkedListNode*  GetLeft()        const {return left;};
+        inline LinkedListNode*  GetRight()       const {return right;};
+        inline bool             GetExplored()    const {return explored;};
+        inline int              GetColor()       const {return color;};
+        inline std::string      GetHuffmanCode() const {return huffman_code;};
 
         inline void             SetData(const int val){data = val;};
         inline void             SetName(const std::string val){name = val;};
         inline void             SetNext(LinkedListNode* const val){next = val;};
+        inline void             SetLeft(LinkedListNode* const val){left = val;};
+        inline void             SetRight(LinkedListNode* const val){right = val;};
         inline void             SetExplored(const bool explored_val){explored = explored_val;};
         inline void             SetColor(const int color_val){color = color_val;};
+        inline void             SetHuffmanCode(const std::string val){huffman_code = val;};
         inline void             operator=(const int& other2) { data = other2;};
 
         friend class LinkedList;
