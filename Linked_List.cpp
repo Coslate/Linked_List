@@ -8,6 +8,9 @@ LinkedList::~LinkedList(){
         std::cout<<"It is LinkedList destructor."<<std::endl;
     }
     CleanAll();
+    if(show_debug_msg){
+        std::cout<<"It is LinkedList destructor done."<<std::endl;
+    }
 }
 void LinkedList::InsertFront(const int value){
     LinkedListNode* current = new LinkedListNode(value); // in heap
